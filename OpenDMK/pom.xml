@@ -9,6 +9,70 @@
 
   <name>OpenDMK</name>
   <url>http://maven.apache.org</url>
+  
+    <build>
+        <plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>     
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>					   	
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                    <dependencies>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                </plugin>
+            	<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.3.1</version>
+					<configuration>						
+					    <archive>			    	
+					        <manifest>
+					            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+					            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+					            <addClasspath>true</addClasspath>
+					        </manifest>
+					        <manifestEntries>
+					        </manifestEntries>
+					    </archive>
+					</configuration>
+            	</plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
